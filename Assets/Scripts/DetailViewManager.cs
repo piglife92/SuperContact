@@ -29,6 +29,9 @@ public class DetailViewManager : ViewManager
     [SerializeField] InputField nameInputField;
     [SerializeField] InputField phoneNumberInputField;
     [SerializeField] InputField emailInputField;
+
+    [SerializeField] ImageButton profilePhotoImageButton;
+
     [SerializeField] Button saveButton;
     
     public delegate void DetailViewManagerSaveDelegate(Contact contact);
@@ -48,6 +51,7 @@ public class DetailViewManager : ViewManager
         nameInputField.SetImmutable(editMode);
         phoneNumberInputField.SetImmutable(editMode);
         emailInputField.SetImmutable(editMode);
+        profilePhotoImageButton.Editable = editMode;
 
         if (editMode)
         {
@@ -64,6 +68,9 @@ public class DetailViewManager : ViewManager
                 nameInputField.text = contactValue.name;
                 phoneNumberInputField.text = contactValue.phoneNumber;
                 emailInputField.text = contactValue.email;
+
+                // 사진도 출력
+                profilePhotoImageButton.Image = SpriteManager.GetSprite(contactValue.profilePhotoFileName);
             }
         }
     }
@@ -94,14 +101,11 @@ public class DetailViewManager : ViewManager
 
     public void Save()
     {
-        // TODO: 사용자가 입력한 정보를 바탕으로 Contact 객체 만들기
-        // 만들어진 Contact 객체를 ScrollView에게 전달하면 끝!
-        // 편집 모드를 해제
-
         Contact newContact = new Contact();
         newContact.name = nameInputField.text;
         newContact.phoneNumber = phoneNumberInputField.text;
         newContact.email = emailInputField.text;
+        newContact.profilePhotoFileName = profilePhotoImageButton.Image.name;
 
         saveDelegate?.Invoke(newContact);
 

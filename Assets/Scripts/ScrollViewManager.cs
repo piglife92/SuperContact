@@ -168,6 +168,7 @@ public class ScrollViewManager : ViewManager, ICell
                 contacts.Value.contactList[cellIndex] = newContact;
                 
                 cell.Title = newContact.name;
+                cell.ProfilePhotoSprite = SpriteManager.GetSprite(newContact.profilePhotoFileName);
 
                 //ClearCell();
                 //LoadData();
