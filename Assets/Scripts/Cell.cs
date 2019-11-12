@@ -69,28 +69,6 @@ public class Cell : MonoBehaviour
         }
     }
 
-    public bool ActiveHide
-    {
-        get
-        {
-            return hideButton.gameObject.activeSelf;
-        }
-        set
-        {
-            hideButton.gameObject.SetActive(value);
-
-            if (value)
-            {
-                cellButton.interactable = false;
-            }
-            else
-            {
-                cellButton.interactable = true;
-            }
-            // cellButton.interactable = !value;
-        }
-    }
-
     private void Start() 
     {
         cellButton = GetComponent<Button>();

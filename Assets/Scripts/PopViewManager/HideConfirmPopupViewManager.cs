@@ -7,7 +7,7 @@ public class HideConfirmPopupViewManager : PopupViewManager
     public delegate void HideConfirmPopupViewManagerDelegate();
     public HideConfirmPopupViewManagerDelegate hideConfirmPopupViewManagerDelegate;
 
-    public void OnClickOK()
+    public void OnClickHide()
     {
         hideConfirmPopupViewManagerDelegate?.Invoke();
         Close();
