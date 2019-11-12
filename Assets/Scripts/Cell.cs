@@ -14,6 +14,7 @@ public class Cell : MonoBehaviour
     [SerializeField] Text title;
     [SerializeField] Button deleteButton;
     [SerializeField] Image profilePhoto;
+    [SerializeField] Button hideButton;
 
     public ICell cellDelegate;
     Button cellButton;
@@ -80,5 +81,10 @@ public class Cell : MonoBehaviour
     public void OnClickDelete()
     {
         cellDelegate.DidSelectDeleteCell(this);
+    }
+
+    public void OnClickHide()
+    {
+
     }
 }
