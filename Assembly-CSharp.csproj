@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\PopViewManager\AddPopupViewManager.cs" />
     <Compile Include="Assets\Scripts\PopViewManager\AlertPopupViewManager.cs" />
     <Compile Include="Assets\Scripts\PopViewManager\ConfirmPopupViewManager.cs" />
+    <Compile Include="Assets\Scripts\PopViewManager\HideConfirmPopupViewManager.cs" />
     <Compile Include="Assets\Scripts\PopViewManager\PopupViewManager.cs" />
     <Compile Include="Assets\Scripts\SCButton.cs" />
     <Compile Include="Assets\Scripts\ScrollViewManager.cs" />

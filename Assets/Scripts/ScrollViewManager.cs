@@ -8,6 +8,7 @@ public class ScrollViewManager : ViewManager, ICell
     [SerializeField] GameObject addPopupViewPrefab;
     [SerializeField] GameObject detailViewPrefab;
     [SerializeField] GameObject confirmPopupViewPrefab;
+    [SerializeField] GameObject hideConfirmPopupViewPrefab;
 
     [SerializeField] RectTransform content;
 
@@ -212,11 +213,11 @@ public class ScrollViewManager : ViewManager, ICell
     {
         if (contacts.HasValue)
         {
-            ConfirmPopupViewManager confirmPopupViewManager
-                = Instantiate(confirmPopupViewPrefab, mainManager.transform)
-                    .GetComponent<ConfirmPopupViewManager>();
+            HideConfirmPopupViewManager hideConfirmPopupViewManager
+                = Instantiate(hideConfirmPopupViewPrefab, mainManager.transform)
+                    .GetComponent<HideConfirmPopupViewManager>();
 
-            confirmPopupViewManager.confirmPopupViewManagerDelegate = () =>
+            hideConfirmPopupViewManager.hideConfirmPopupViewManagerDelegate = () =>
             {
                 int cellIndex = cellList.IndexOf(cell);
                 List<Contact> contactList = contacts.Value.contactList;
@@ -225,7 +226,7 @@ public class ScrollViewManager : ViewManager, ICell
                 Destroy(cell.gameObject);
                 AdjustContent();
             };
-        confirmPopupViewManager.Open();
+            hideConfirmPopupViewManager.Open();
         }
     }
 }

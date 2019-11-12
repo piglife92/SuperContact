@@ -314,6 +314,8 @@ MonoBehaviour:
     type: 3}
   confirmPopupViewPrefab: {fileID: 2673087480253127907, guid: 5618f5472dd6f384f9bb46482d946609,
     type: 3}
+  hideConfirmPopupViewPrefab: {fileID: 2673087480253127907, guid: 4b47667a1aa70d546a4cf2d444f84c0b,
+    type: 3}
   content: {fileID: 4246581517022466334}
 --- !u!95 &7953835034543349933
 Animator:

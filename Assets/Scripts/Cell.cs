@@ -55,6 +55,7 @@ public class Cell : MonoBehaviour
         set
         {
             deleteButton.gameObject.SetActive(value);
+            hideButton.gameObject.SetActive(value);
 
             if (value)
             {
@@ -94,7 +95,6 @@ public class Cell : MonoBehaviour
     {
         cellButton = GetComponent<Button>();
         this.ActiveDelete = false;
-        this.ActiveHide = false;
     }
 
     public void OnClick()
