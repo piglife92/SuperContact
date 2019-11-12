@@ -7,6 +7,8 @@ public interface ICell
 {
     void DidSelectCell(Cell cell);
     void DidSelectDeleteCell(Cell cell);
+
+    void DidSelectHideCell(Cell cell);
 }
 
 public class Cell : MonoBehaviour
@@ -62,8 +64,29 @@ public class Cell : MonoBehaviour
             {
                 cellButton.interactable = true;
             }
+                // cellButton.interactable = !value;
+        }
+    }
 
-//            cellButton.interactable = !value;
+    public bool ActiveHide
+    {
+        get
+        {
+            return hideButton.gameObject.activeSelf;
+        }
+        set
+        {
+            hideButton.gameObject.SetActive(value);
+
+            if (value)
+            {
+                cellButton.interactable = false;
+            }
+            else
+            {
+                cellButton.interactable = true;
+            }
+            // cellButton.interactable = !value;
         }
     }
 
@@ -71,6 +94,7 @@ public class Cell : MonoBehaviour
     {
         cellButton = GetComponent<Button>();
         this.ActiveDelete = false;
+        this.ActiveHide = false;
     }
 
     public void OnClick()
@@ -85,6 +109,6 @@ public class Cell : MonoBehaviour
 
     public void OnClickHide()
     {
-
+        cellDelegate.DidSelectHideCell(this);
     }
 }

@@ -207,4 +207,25 @@ public class ScrollViewManager : ViewManager, ICell
             confirmPopupViewManager.Open();
         }
     }
+
+    public void DidSelectHideCell(Cell cell)
+    {
+        if (contacts.HasValue)
+        {
+            ConfirmPopupViewManager confirmPopupViewManager
+                = Instantiate(confirmPopupViewPrefab, mainManager.transform)
+                    .GetComponent<ConfirmPopupViewManager>();
+
+            confirmPopupViewManager.confirmPopupViewManagerDelegate = () =>
+            {
+                int cellIndex = cellList.IndexOf(cell);
+                List<Contact> contactList = contacts.Value.contactList;
+                contactList.RemoveAt(cellIndex);
+                cellList.RemoveAt(cellIndex);
+                Destroy(cell.gameObject);
+                AdjustContent();
+            };
+        confirmPopupViewManager.Open();
+        }
+    }
 }
