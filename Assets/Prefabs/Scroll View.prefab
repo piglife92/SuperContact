@@ -308,6 +308,8 @@ MonoBehaviour:
   mainManager: {fileID: 0}
   cellPrefab: {fileID: 4243127662207908649, guid: d60b7392640fb0e4787647553d03844f,
     type: 3}
+  hideCellPrefab: {fileID: 4243127662207908649, guid: bc2e4d15a25972046818634278c37684,
+    type: 3}
   addPopupViewPrefab: {fileID: 4093587450579236137, guid: edad54dd6875d194ca1dba8977e1142a,
     type: 3}
   detailViewPrefab: {fileID: 893227375399353740, guid: 289340428c8dfe540beec0af609c977b,

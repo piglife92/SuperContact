@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScrollViewManager : ViewManager, ICell
 {
     [SerializeField] GameObject cellPrefab;
+    [SerializeField] GameObject hideCellPrefab;
     [SerializeField] GameObject addPopupViewPrefab;
     [SerializeField] GameObject detailViewPrefab;
     [SerializeField] GameObject confirmPopupViewPrefab;
@@ -221,9 +222,8 @@ public class ScrollViewManager : ViewManager, ICell
             {
                 int cellIndex = cellList.IndexOf(cell);
                 List<Contact> contactList = contacts.Value.contactList;
-                contactList.RemoveAt(cellIndex);
-                cellList.RemoveAt(cellIndex);
-                Destroy(cell.gameObject);
+                cell.gameObject.SetActive(false);
+                
                 AdjustContent();
             };
             hideConfirmPopupViewManager.Open();

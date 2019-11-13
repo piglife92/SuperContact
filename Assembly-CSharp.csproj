@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Common\FileManager.cs" />
     <Compile Include="Assets\Scripts\Contact.cs" />
     <Compile Include="Assets\Scripts\DetailViewManager.cs" />
+    <Compile Include="Assets\Scripts\HideCell.cs" />
     <Compile Include="Assets\Scripts\ImageButton.cs" />
     <Compile Include="Assets\Scripts\ImageCell.cs" />
     <Compile Include="Assets\Scripts\MainManager.cs" />
